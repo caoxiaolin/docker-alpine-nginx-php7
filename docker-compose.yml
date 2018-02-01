@@ -1,0 +1,29 @@
+version: '3'
+services:
+    webserver1:
+        image: webserver
+        restart: always
+        container_name: ws1
+        ports:
+            - "8081:80"
+        volumes:
+            - "/home/docker/config/nginx/conf.d/:/etc/nginx/conf.d/"
+            - "/home/docker/www/mytest/:/var/www/mytest/"
+    webserver2:
+        image: webserver
+        restart: always
+        container_name: ws2
+        ports:
+            - "8082:80"
+        volumes:
+            - "/home/docker/config/nginx/conf.d/:/etc/nginx/conf.d/"
+            - "/home/docker/www/mytest/:/var/www/mytest/"
+    webserver3:
+        image: webserver
+        restart: always
+        container_name: ws3
+        ports:
+            - "8083:80"
+        volumes:
+            - "/home/docker/config/nginx/conf.d/:/etc/nginx/conf.d/"
+            - "/home/docker/www/mytest/:/var/www/mytest/"
