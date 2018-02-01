@@ -1,0 +1,10 @@
+#!/bin/sh
+docker run -d \
+           --name webserver \
+           --privileged=true \
+           -p 8081:80 \
+           -v /home/docker/logs/php/:/var/log/php7 \
+           -v /home/docker/logs/nginx:/var/log/nginx/ \
+           -v /home/docker/config/nginx/conf.d/:/etc/nginx/conf.d/ \
+           -v /home/docker/www/mytest/:/var/www/mytest \
+           webserver
