@@ -116,3 +116,6 @@ rong@debian:/home/docker$ tail -f logs/nginx/*
 ==> logs/nginx/error.log <==
 </code>
 </pre>
+
+# 浏览器访问
+![avatar](https://raw.githubusercontent.com/caoxiaolin/resources/master/docker-nginx-php7.png)
