@@ -101,8 +101,14 @@ Step 6/6 : CMD /usr/bin/supervisord -n -c /etc/supervisord.conf
 Removing intermediate container 7d126a7c0a81
 Successfully built b56d6aef2782
 Successfully tagged webserver:latest
+rong@debian:/home/docker$ docker images
+REPOSITORY                TAG                 IMAGE ID            CREATED             SIZE
+webserver                 latest              b56d6aef2782        5 minutes ago       82MB
 rong@debian:/home/docker$ ./run-docker 
 6fed6c317b9eab204143a59fd9b17aedec3bddd60f6e866073cfdf5934fa734f
+rong@debian:/home/docker$ docker ps
+CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS                           NAMES
+6fed6c317b9e        webserver           "/usr/bin/supervis..."   1 minutes ago       Up 1 minutes        443/tcp, 0.0.0.0:8081->80/tcp   webserver
 rong@debian:/home/docker$ tail -f logs/nginx/*
 ==> logs/nginx/access.log <==
 192.168.41.1 - - [01/Feb/2018:08:22:44 +0000] "GET / HTTP/1.1" 200 84312 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0" "-"
